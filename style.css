@@ -13,6 +13,7 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text-main);
+  font-size:large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -47,55 +48,70 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: var(--color-secondary);
 }
 
-.card {
-  background-color: var(--color-surface);
-  color: var(--color-text-soft);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
+.bar {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.topbar {
-  text-align:center;
-  position: fixed;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.topbar .discordImage {
+.bar .discordImage {
   width: 125px; 
   height: 125px; 
   border-radius: 50%;
 }
 
 .subjects {
-  text-align:center;
+  text-align: center;
   background-color: var(--color-surface);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 2rem auto; 
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90%; 
 }
 
-.subject .horizontal-list {
+
+.subjects ul.horizontal-list {
   padding: 0;
   margin: 0;
-  list-style: disc; 
+  list-style: none;
   display: flex;
-  flex-direction: row; 
-  gap: 20px; 
+  justify-content: center;
+  gap: 20px;
+}
+
+.horizontal-list {
+  padding: 20px;
+  margin: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .horizontal-list li {
-  display: list-item; 
+  color: var(--color-text-soft);
 }
 
+/* Updated box section using theme colors */
+.box {
+  border: 2px dotted var(--color-secondary);
+  display: flex;
+  align-items: stretch;
+}
 
+.box div {
+  height: 150px;
+  width: 150px;
+  background-color: color-mix(in srgb, var(--color-secondary) 20%, transparent);
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}

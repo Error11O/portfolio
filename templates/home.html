@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="topbar">
+    <div class="bar">
         <img class="discordImage"
             src="https://cdn.discordapp.com/avatars/800491426298986496/a57bc36e7accf94072378058f920e3bc?size=1024"
             alt="current discord icon">
@@ -19,37 +19,65 @@
         <div class="about">
             <h2>About Me</h2>
             <p>
-                Hi I am a second year computer science student. I enjoy Backend development. I am best at
-                making Minecraft plugins in spigot / papermc, Minecraft Mods in FabricMC, Making discord bots using discord.js.
-                Heres a list of technologys I know:
+                Hi, I’m a second-year Computer Science student with a strong interest in backend development.<br>
+                I'm most experienced in:<br>
             </p>
+
             <ul class="horizontal-list">
-                <li>Linux</li>
-                <li>Java</li>
-                <li>JavaScript</li>
-                <li>Kotlin</li>
-                <li>c#</li>
-                <li>MySQL</li>
-                <li>SQLite</li>
-                <li>MongoDB</li>
-                <li>petrodactyl</li>
+                <li><strong>Linux</strong></li>
+                <li><strong>Java</strong></li>
+                <li><strong>JavaScript</strong></li>
+                <li><strong>Kotlin</strong></li>
+                <li><strong>c#</strong></li>
+                <li><strong>MySQL</strong></li>
+                <li><strong>SQLite</strong></li>
+                <li><strong>MongoDB</strong></li>
+                <li><strong>Petrodactyl</strong></li>
             </ul>
 
         </div>
-        <div class="modrinth">
-            <h2>Modrinth</h2>
-        </div>
         <div class="github">
             <h2>Github</h2>
+            <div id="github" class="box">
+            </div>
         </div>
-        <div class="projects">
-            <h2>Projects</h2>
+        <div class="modrinth">
+            <h2>Modrinth</h2>
+            <div id="modrinth" class="box">
+
+            </div>
         </div>
+    </div>
+    <div class="bar">
+        <h2 class="Name">Discord: Error110.</h1>
     </div>
 </body>
 <script>
-    fetch('https://api.github.com/users/Error11O/repos')
-  .then(response => response.json())
-  .then(data => console.log(data));
+    async function main() {
+        let github = await fetch('https://api.github.com/users/Error11O/repos')
+        const repos = await github.json();
+        repos.forEach(repo => {
+            let html = document.getElementById("github").innerHTML += `
+        <div onclick="window.location.href='${repo.html_url}';" > 
+            <strong>${repo.name}</strong>
+            <p>${repo.description.slice(0, 30)}...</p>
+        </div>
+        `
+        });
+
+        let modrinth = await fetch('https://api.modrinth.com/v2/user/Error11O/projects')
+        const plugins = await modrinth.json();
+        plugins.forEach(plugin => {
+            let html = document.getElementById("modrinth").innerHTML += `
+        <div onclick="window.location.href='https://modrinth.com/plugin/${plugin.slug}';"> 
+            <strong>${plugin.slug}</strong>
+            <p>${plugin.description.slice(0, 30)}...</p>
+        </div>
+        `
+        });
+    }
+    main()
+
 </script>
+
 </html>
