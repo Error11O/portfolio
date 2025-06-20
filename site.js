@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(templatesDir, 'home.html'));
 });
 
-module.exports.handler = serverless(app);
+module.exports = serverless(app); 
