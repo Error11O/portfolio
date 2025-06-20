@@ -8,8 +8,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0"
-  }
+    "express": "^5.1.0",
+    "serverless-http": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Error11O/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Error11O/portfolio/issues"
+  },
+  "homepage": "https://github.com/Error11O/portfolio#readme",
+  "description": ""
 }
