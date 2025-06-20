@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/Error11O/portfolio/issues"
   },
+  "engines": {
+  "node": "18.x"
+  },
   "homepage": "https://github.com/Error11O/portfolio#readme",
   "description": ""
 }
