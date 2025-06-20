@@ -1,0 +1,101 @@
+:root {
+  --color-primary: #5C2C6D;
+  --color-secondary: #734D96;
+  --color-accent: #C48BFD;
+
+  --color-background: #1F132C;
+  --color-surface: #3A2A4F;
+
+  --color-text-main: #F2E9FF;
+  --color-text-soft: #BBAACB;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: var(--color-surface);
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: var(--color-text-main);
+}
+
+p {
+  color: var(--color-text-soft);
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+}
+
+.card {
+  background-color: var(--color-surface);
+  color: var(--color-text-soft);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin: 1rem 0;
+}
+
+.topbar {
+  text-align:center;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topbar .discordImage {
+  width: 125px; 
+  height: 125px; 
+  border-radius: 50%;
+}
+
+.subjects {
+  text-align:center;
+  background-color: var(--color-surface);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.subject .horizontal-list {
+  padding: 0;
+  margin: 0;
+  list-style: disc; 
+  display: flex;
+  flex-direction: row; 
+  gap: 20px; 
+}
+
+.horizontal-list li {
+  display: list-item; 
+}
+
+
