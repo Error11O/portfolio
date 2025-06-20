@@ -9,7 +9,7 @@ const templatesDir = path.join(__dirname, '..', 'templates');
 app.use(express.static(path.join(__dirname, '..')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(templatesDir, 'home.html'));
+  res.sendFile(path.join('templates', 'home.html'));
 });
 
 module.exports = serverless(app); 
