@@ -4,12 +4,10 @@ const serverless = require('serverless-http');
 
 const app = express();
 
-const templatesDir = path.join(__dirname, '..', 'templates');
-
-app.use(express.static(path.join(__dirname, '..')));
+const templatesDir = path.resolve(__dirname, 'templates');
 
 app.get('/', (req, res) => {
-  res.sendFile('/templates/home.html');
+  res.sendFile(path.join(templatesDir, 'home.html'));
 });
 
-module.exports = serverless(app); 
+module.exports = serverless(app);
