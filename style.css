@@ -13,7 +13,7 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text-main);
-  font-size:large;
+  font-size: large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -76,7 +76,6 @@ button:hover {
   max-width: 90%; 
 }
 
-
 .subjects ul.horizontal-list {
   padding: 0;
   margin: 0;
@@ -84,6 +83,7 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .horizontal-list {
@@ -93,25 +93,49 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .horizontal-list li {
   color: var(--color-text-soft);
 }
 
-/* Updated box section using theme colors */
 .box {
   border: 2px dotted var(--color-secondary);
   display: flex;
   align-items: stretch;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
 }
 
 .box div {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+  flex-shrink: 0;
   background-color: color-mix(in srgb, var(--color-secondary) 20%, transparent);
   border: 2px solid var(--color-secondary);
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: medium;
+  }
+
+  .subjects {
+    padding: 1rem;
+  }
+
+  .horizontal-list,
+  .subjects ul.horizontal-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    overflow-x: auto;
+  }
 }

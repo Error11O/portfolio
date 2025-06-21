@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Error110's Portfolio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -19,7 +19,8 @@
         <div class="about">
             <h2>About Me</h2>
             <p>
-                Hi, I’m a second-year Computer Science student with a strong interest in backend development.<br>
+                Hi, I’m a second-year Computer Science student with a strong interest in backend development and Minecraft development.<br>
+                I also do plugin commisions and assist in Petrodactyl game panel setup on people's machines. <br>
                 I'm most experienced in:<br>
             </p>
 
@@ -34,7 +35,6 @@
                 <li><strong>MongoDB</strong></li>
                 <li><strong>Petrodactyl</strong></li>
             </ul>
-
         </div>
         <div class="github">
             <h2>Github</h2>
@@ -60,7 +60,7 @@
             let html = document.getElementById("github").innerHTML += `
         <div onclick="window.location.href='${repo.html_url}';" > 
             <strong>${repo.name}</strong>
-            <p>${repo.description.slice(0, 30)}...</p>
+            <p>${repo.description.slice(0, 45)}...</p>
         </div>
         `
         });
@@ -71,7 +71,7 @@
             let html = document.getElementById("modrinth").innerHTML += `
         <div onclick="window.location.href='https://modrinth.com/plugin/${plugin.slug}';"> 
             <strong>${plugin.slug}</strong>
-            <p>${plugin.description.slice(0, 30)}...</p>
+            <p>${plugin.description.slice(0, 45)}...</p>
         </div>
         `
         });
